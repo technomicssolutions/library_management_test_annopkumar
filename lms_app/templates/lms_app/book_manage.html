@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<head>
+	{% include 'lms_app/header.html' %}
+</head>
+<body>
+	<div class="alert alert-info" align="Center"><h4>MANAGE BOOK</h4></div>
+</body>
+		<div class="search">
+			<table id="list" class="table table-hover" >
+				<tr class="success" style="font-size: 12px" style="width:auto">
+				  <th>Category</th>
+				  <th>Name</th>
+				  <th>Author</th>
+				  <th>Publisher</th>
+				  <th></th>
+				  <th></th>
+				 </tr>
+				<tr>
+				{% for book in object_list %} 
+				<td>{{book.category}}</td>
+				<td>{{book.name}}</td>
+				<td>{{book.author}}</td>
+				<td>{{book.publisher}}</td>
+				<td> <a href="{% url "book_edit" book.id %}">Edit</td>
+				<td><a href="{% url "book_delete" book.id %}">Delete</td>
+				</tr>
+				{% endfor %}				
+				</tr>
+			</table> 
+		</div>
+
+<a href="{% url "book_add" %}"><h4><center>Add New Book</center></h4></a>
+

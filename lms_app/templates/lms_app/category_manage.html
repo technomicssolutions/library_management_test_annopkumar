@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<head>
+	{% include 'lms_app/header.html' %}
+</head>
+<body>
+	<div class="alert alert-info" align="Center"><h4>MANAGE CATEGORY</h4></div>
+</body>
+		<div class="search">
+			<table id="list" class="table table-hover" >
+				<tr class="success" style="font-size: 12px" style="width:auto">
+				  <th>Category</th>
+				  <th></th>
+				  <th></th>
+				 </tr>
+				<tr>
+				{% for category in object_list %} 
+				<td>{{category.cat_name}}</td>
+				<td> <a href="{% url "category_edit" category.id %}">Edit</td>
+				<td><a href="{% url "category_delete" category.id %}">Delete</td>
+				</tr>
+				{% endfor %}				
+				</tr>
+			</table> 
+		</div>
+
+<a href="{% url "category_add" %}"><h4><center>Add New Category</center></h4></a>
+

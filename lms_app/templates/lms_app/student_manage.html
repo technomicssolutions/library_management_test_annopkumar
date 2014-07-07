@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<head>
+	{% include 'lms_app/header.html' %}
+</head>
+<body>
+	<div class="alert alert-info" align="Center"><h4>MANAGE STUDENT</h4></div>
+</body>
+		<div class="search">
+			<table id="list" class="table table-hover" >
+				<tr class="success" style="font-size: 12px" style="width:auto">
+				  <th>Name</th>
+				  <th>Roll No</th>
+				  <th>Department</th>
+				  <th>Division</th>
+				  <th></th>
+				  <th></th>
+				 </tr>
+				<tr>
+				{% for student in object_list %} 
+				<td>{{student.name}}</td>
+				<td>{{student.rollno}}</td>
+				<td>{{student.dept}}</td>
+				<td>{{student.division}}</td>
+				<td> <a href="{% url "student_edit" student.id %}">Edit</td>
+				<td><a href="{% url "student_delete" student.id %}">Delete</td>
+				</tr>
+				{% endfor %}				
+				</tr>
+			</table> 
+		</div>
+
+<a href="{% url "student_add" %}"><h4><center>Add New Student</center></h4></a>
+
