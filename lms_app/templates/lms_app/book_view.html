@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<head>
+  {% include 'lms_app/header.html' %}
+</head>
+<body>
+  <div class="alert alert-info" align="Center"><h4>Books In Hand</h4></div>
+</body>
+    <div class="search">
+      <table id="list" class="table table-hover" >
+        <tr class="success" style="font-size: 12px" style="width:auto">
+          <th>Book Name</th>
+          <th>Issue Date</th>
+          <th>Return Date</th>
+          <th>Fine</th>
+          <th></th>
+         </tr>
+        <tr>
+        {% for issue in form %}
+        <td>{{ issue.book.name }}</td>
+        <td>{{ issue.issue_date|date:"d/m/Y" }}</td>
+        <td>{{ issue.return_date|date:"d/m/Y" }}</td>
+        <td>{{ issue.fine_amount }}</td>
+       <td> <a href="{% url 'book_return' issue.id %}">Return</td>
+       </tr>
+        {% endfor %}        
+        </tr>
+      </table> 
+    </div>
+
+<!-- <a href="{% url "book_add" %}"><h4><center>Add New Book</center></h4></a> -->
+

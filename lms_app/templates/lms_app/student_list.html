@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<head>
+	{% include 'lms_app/header.html' %}
+</head>
+<body>
+	<div class="alert alert-info" align="Center"><h4>STUDENTS LIST</h4></div>
+</body>
+<div class="mydiv">
+  <form method="POST">{% csrf_token %}
+     <table class="tab_def">
+      <tr><td>Student Name</td><td>
+    <select name="student_id">
+      {% for student in students %}
+        <option  value="{{student.id}}">{{student.name}}</option>
+      {% endfor %}    
+    </select></td></tr>
+    <tr><td></td><td><input type="submit" value="Submit" /> 
+      <input type="submit" name="cancel" value="Cancel" /> </td></tr>
+   </table>
+  </form>
+
+
+ 
