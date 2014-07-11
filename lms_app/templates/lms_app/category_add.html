@@ -1,17 +1,30 @@
-{% load staticfiles %}
-<head>
-	{% include 'lms_app/header.html' %}
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Add Category {% endblock title %}
+{% block content %}
 	<div class="alert alert-info" align="Center"><h4>ADD BOOK CATEGORY</h4></div>
-</body>
-<div class="mydiv">
-<form method="post">{% csrf_token %}
-   <table class="tab_def">
-   	<tr><td>Category Name</td><td>{{ form.cat_name }}</td></tr>
-    <tr><td></td><td><input type="submit" value="Submit" />
-    	<input type="submit" name="cancel" value="Cancel" /> </td></tr>
-   </table>
- </div>
-</form>
+	  <div class="mydiv">
+		<form method="post">{% csrf_token %}
+		   <table class="tab_def">
+		   	<tr><td>Category Name</td><td>{{ form.cat_name }}</td></tr>
+		    <tr><td></td><td><input type="submit" value="Submit" />
+		     <a href="{% url 'lms_home' %}">	<input type="button" name="cancel" 		value="Cancel" /> </td>
+		     {% if form.errors %}
+             {% for error in form.errors %}
+               <tr>
+                <td> </td>
+                <td><font color="red">Category Name field required</td></tr>
+              {% endfor %}
+          	{% endif %}
+          	{% if messages %}
+            <tr>
+            <td></td>
+            <td>{% for message in messages %}
+                <font color="red">{{ message }}
+                {% endfor %}
+            </td></tr>
+             {% endif %}
+		   </table>
+		</form>
+	  </div>
+{% endblock content%}
 

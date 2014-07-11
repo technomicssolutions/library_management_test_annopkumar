@@ -1,12 +1,10 @@
-{% load staticfiles %}
-<head>
-	<title>Home | LMS </title>
-<head>
-	{% include 'lms_app/header.html' %}
-</head>
-<body>
-	<div class="alert alert-info" align="Center"><h4>HOME</h4></div>
-</body>
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+{% block body_id %}home{% endblock %}
+{% block content %}
+	<div class="alert alert-info" align="Center"><h4>Home</h4></div>
+	<h1><center> Welcome to LMS </h1></center>
+{% endblock content%}
 
-
+  
 

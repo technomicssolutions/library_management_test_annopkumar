@@ -1,3 +1,34 @@
+.title_div {
+	background-color: #ADD8E6;
+	height: 5%;
+	margin: auto;
+	display: block;
+
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100% !important;
+  margin: auto; 
+  height: auto;
+}
+
+.alert-info {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.alert-info h4 {
+  color: #3a87ae;
+}
+
+.alert-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
 .mydiv {
     position:fixed;
     top: 50%;
@@ -9,67 +40,107 @@
     border: 1px solid #ccc;
     background-color: #f3f3f3;
 }
-.tab_def{
-	width: 500
-}
-nav ul ul {
-    display: none;
-}
-
-nav ul li:hover > ul {
-        display: block;
-}
-nav ul {
-    background: #efefef; 
-    background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
-    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
-    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
-    box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
-    padding: 0 20px;
-    border-radius: 10px;  
-    list-style: none;
-    position: relative;
-    display: inline-table;
-}
-    
-nav ul:after {
-        content: ""; clear: both; display: block;
+/*Header*/
+.menu_header {
+  background-color: #ADD8E6;
+  width: 100%;
+  min-height: 20px !important;
+  margin: 0px !important;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  padding: 1px 0px 1px 0px;
+  float: left;
 }
 
- li {
-    float: left;
+
+.menu_div {
+  
+  height: 8%;
+  margin-top: 2%;
+  margin-right: 7%;
 }
-    nav ul li:hover {
-        background: #4b545f;
-        background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
-        background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
-        background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);
+.menu_div ul li:hover ul{
+        display: block; 
     }
-        nav ul li:hover a {
-            color: #fff;
-        }
-    
-    nav ul li a {
-        display: block; padding: 25px 40px;
-        color: #757575; text-decoration: none;
-    }
-nav ul ul {
-    background: #5f6975; border-radius: 0px; padding: 0;
-    position: absolute; top: 100%;
+
+
+table {
+  margin: auto;
+  width: 80% !important;
 }
-    nav ul ul li {
-        float: none; 
-        border-top: 1px solid #6b727c;
-        border-bottom: 1px solid #575f6a;
-        position: relative;
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.tab  {
+  margin: auto;
+  width: 30% !important;
+}
+
+.menu_div ul li {
+  float: right;
+  display: block;
+  padding: 2px 10px 2px 5px;
+  border-right: 1px solid #FFFFFF;
+  position: relative;
+}
+.menu_div ul li ul li {
+  float: none;
+  display: block;
+  padding: 3px 5px 0px 5px;
+  border: none; 
+  height: 30px;
+}
+.menu_div ul li ul {
+  position: absolute;
+  z-index: 1;
+  margin: 0px;
+  padding: 5px;
+  background-color: #ADD8E6;
+  min-width: 150px;
+  display: none;
+}
+
+.menu_div ul li:hover ul{
+        display: block; 
     }
-        nav ul ul li a {
-            padding: 15px 40px;
-            color: #fff;
-        }   
-            nav ul ul li a:hover {
-                background: #4b545f;
-            }
-nav ul ul ul {
-    position: absolute; left: 100%; top:0;
+
+.menu_div ul li a{
+  color: #FFFFFF;
+}
+.menu_div ul li a:hover {
+  color: #235580;
+  text-decoration: none;
+}
+.menu_div ul li ul li a{
+  color: #FFFFFF;
+  font-weight: normal;
+}
+.menu_div ul li ul li a:hover {
+  color: #235580;
+  text-decoration: none;
+}
+
+.login {
+  border: 5px solid #ADD8E6;
+    margin: auto;
+    width: 26%;
+    margin-top: 15%;
+    border-radius: 3px;
+}
+.login_form_container {
+  margin: 5%;
+  width: 90%;
+}
+.div_header {
+  background-color: #ADD8E6;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0 10px 17px;
+    width: 95%;
 }

@@ -1,26 +1,34 @@
-{% load staticfiles %}
-<head>
-	<title>Home | LMS </title>
-<link rel="stylesheet" type="text/css" href="{% static 'lms_app/mystyle2.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'lms_app/style3.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'lms_app/bootstrap.css' %}"/>
 
-</head>
-<body>
-	<div class="menu_header">
-		<div class="menu_div">
-				<div class="nav">
-		  		        <ul class="nav nav-pills">	
-				       		<li class="pull-left"><a href="{% url 'lms_home' %}">Home</a></li>
-				            <li class="pull-left"><a href="{% url 'book_add' %}">Add Books</a></li>
-				            <li class="pull-left"><a href="{% url 'student_add' %}">Add Student</a></li>
-				            <li class="pull-left"><a href="{% url 'category_add' %}">Add Category</a></li>
-				            <li class="pull-right"><a href="{% url 'book_manage' %}">Manage Books</a></li>
-				            <li class="pull-right"><a href="{% url 'student_manage' %}">Manage Student</a></li>
-				            <li class="pull-right"><a href="{% url 'category_manage' %}">Manage Category</a></li>
-
-				        </ul>
-				</div>	
-		</div>
+<div class="menu_header">
+	<div class="menu_div">
+		<ul>
+			<li class=""><a href="#">Category</a>
+				<ul>
+					<li><a href="{% url 'category_add' %}">Add Category</a></li>
+					<li><a href="{% url 'category_manage' %}">Manage Category</a></li>
+				</ul>
+			</li>
+			<li class=""><a href="#">Books</a>
+				<ul>
+					<li><a href="{% url 'book_add' %}">Add Book</a></li>
+					<li><a href="{% url 'book_manage' %}">Manage Books</a></li>
+					<li><a href="{% url 'book_issue' %}">Issue Books</a></li>
+				</ul>
+			</li>
+			<li class=""><a href="#">Students</a>
+				<ul>
+					<li><a href="{% url 'student_add' %}">Add Student</a></li>
+					<li><a href="{% url 'student_manage' %}">Manage Students</a></li>
+				</ul>
+			</li>
+			<li class=""><a href="{% url 'lms_home' %}">Home</a></li>
+			<li><a href="#"><font color="green">Welcome {{  user.username }}</font></a>
+				<ul>
+				<li><a href="{% url 'lms_logout' %}">Logout</a></li>
+				</ul>
+			</li>
+		</ul>
+			
 	</div>
-</body>
+<div>
+
